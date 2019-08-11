@@ -1,0 +1,134 @@
+@import '../sass/mixins';
+@import '../sass/variables';
+
+.Sidebar {
+    width: 25rem;
+    height: 100vh;
+    border-right: 1px solid #ccc;
+    padding: .5rem;
+    overflow-y: scroll;
+    font-family: map-get($map: $fonts, $key: 'main');
+
+    &_divider {
+        opacity: .3;
+        margin-bottom: 1rem;
+    }
+
+    &_heading {
+        margin-bottom: 2rem;
+        color: #ccc;
+    }
+
+    &_container {
+        width: 100%;
+        height: 100vh;
+        padding: 1rem;
+
+
+        &_item {
+            width: 100%;
+            height: auto;
+            margin-bottom: 2rem;
+
+            &_heading {
+                @include row_vertical_center;
+
+                &_title {
+                    font-size: 1.5rem;
+                }
+            }
+
+            &_subheadings {
+                padding: 1rem;
+                display: none;
+
+                &_heading {
+                    line-height: 1.8rem;
+                    font-size: 1.2rem;
+                    font-weight: 400;
+                    margin-left: 1rem;
+                }
+            }
+        }
+    }
+}
+
+.icon {
+    width: 2rem;
+    height: 2rem;
+    fill: #ccc;
+}
+
+.heading_icon {
+    width: 1.3rem;
+    height: 1.3rem;
+    margin-right: .5rem;
+}
+
+.heading_arrow {
+    width: 2rem;
+    height: 2rem;
+    margin-left: auto;
+    opacity: .6;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.open_close {
+    -webkit-animation: spin 0.2s ease 0.1s 1 forwards;
+    animation: spin 0.2s ease 0.1s 1 forwards;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+
+    100% {
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+
+    100% {
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+
+    100% {
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+
+    100% {
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+}
+
+.open {
+    display: block;
+}
