@@ -1,6 +1,18 @@
 import React, { useState, useEffect } from "react";
 import styles from "../css/Sidebar.module.scss";
 import sprite from "../assets/sidebar.svg";
+import SidebarItem from "./SidebarItem";
+import {
+  tagsHeadings,
+  templatesHeadings,
+  assetsHeadings,
+  datavizHeadings,
+  utilsHeadings,
+  bugtrackerHeadings,
+  styleguideHeadings,
+  componentHeadings,
+  iconSet
+} from "../utils/headings";
 
 const Sidebar = () => {
   const [justClicked, setJustClicked] = useState(null);
@@ -35,35 +47,8 @@ const Sidebar = () => {
               <use xlinkHref={`${sprite}#icon-chevron-small-right`} />
             </svg>
           </h2>
-          <main
-            className={
-              justClicked
-                ? `${styles.Sidebar_container_item_subheadings} ${styles.open}`
-                : styles.Sidebar_container_item_subheadings
-            }
-          >
-            <h6 className={styles.Sidebar_container_item_subheadings_heading}>
-              Inputs
-            </h6>
-            <h6 className={styles.Sidebar_container_item_subheadings_heading}>
-              Buttons
-            </h6>
-            <h6 className={styles.Sidebar_container_item_subheadings_heading}>
-              Forms
-            </h6>
-            <h6 className={styles.Sidebar_container_item_subheadings_heading}>
-              Navbars
-            </h6>
-            <h6 className={styles.Sidebar_container_item_subheadings_heading}>
-              Cards
-            </h6>
-            <h6 className={styles.Sidebar_container_item_subheadings_heading}>
-              Grids
-            </h6>
-            <h6 className={styles.Sidebar_container_item_subheadings_heading}>
-              Icons
-            </h6>
-          </main>
+          {/* MAIN: SIDEBARITEM COMPONENT GOES HERE... */}
+          <SidebarItem subheadings={componentHeadings} />
         </div>
 
         {/* STYLE GUIDE SECTION */}
@@ -88,29 +73,7 @@ const Sidebar = () => {
               <use xlinkHref={`${sprite}#icon-chevron-small-right`} />
             </svg>
           </h2>
-          <main
-            className={
-              justClicked
-                ? `${styles.Sidebar_container_item_subheadings} ${styles.open}`
-                : styles.Sidebar_container_item_subheadings
-            }
-          >
-            <h6 className={styles.Sidebar_container_item_subheadings_heading}>
-              Standards
-            </h6>
-            <h6 className={styles.Sidebar_container_item_subheadings_heading}>
-              Colors
-            </h6>
-            <h6 className={styles.Sidebar_container_item_subheadings_heading}>
-              Classes
-            </h6>
-            <h6 className={styles.Sidebar_container_item_subheadings_heading}>
-              Typography
-            </h6>
-            <h6 className={styles.Sidebar_container_item_subheadings_heading}>
-              Mobile
-            </h6>
-          </main>
+          <SidebarItem subheadings={styleguideHeadings} />
         </div>
         {/* BUG TRACKER SECTION */}
         <div className={styles.Sidebar_container_item}>
@@ -134,26 +97,7 @@ const Sidebar = () => {
               <use xlinkHref={`${sprite}#icon-chevron-small-right`} />
             </svg>
           </h2>
-          <main
-            className={
-              justClicked
-                ? `${styles.Sidebar_container_item_subheadings} ${styles.open}`
-                : styles.Sidebar_container_item_subheadings
-            }
-          >
-            <h6 className={styles.Sidebar_container_item_subheadings_heading}>
-              Open
-            </h6>
-            <h6 className={styles.Sidebar_container_item_subheadings_heading}>
-              In-Progress
-            </h6>
-            <h6 className={styles.Sidebar_container_item_subheadings_heading}>
-              Closed
-            </h6>
-            <h6 className={styles.Sidebar_container_item_subheadings_heading}>
-              Add New
-            </h6>
-          </main>
+          <SidebarItem subheadings={bugtrackerHeadings} />
         </div>
 
         {/* UTILS SECTION */}
@@ -178,38 +122,7 @@ const Sidebar = () => {
               <use xlinkHref={`${sprite}#icon-chevron-small-right`} />
             </svg>
           </h2>
-          <main
-            className={
-              justClicked
-                ? `${styles.Sidebar_container_item_subheadings} ${styles.open}`
-                : styles.Sidebar_container_item_subheadings
-            }
-          >
-            <h6 className={styles.Sidebar_container_item_subheadings_heading}>
-              React
-            </h6>
-            <h6 className={styles.Sidebar_container_item_subheadings_heading}>
-              JS
-            </h6>
-            <h6 className={styles.Sidebar_container_item_subheadings_heading}>
-              CSS
-            </h6>
-            <h6 className={styles.Sidebar_container_item_subheadings_heading}>
-              HTML
-            </h6>
-            <h6 className={styles.Sidebar_container_item_subheadings_heading}>
-              Mobile
-            </h6>
-            <h6 className={styles.Sidebar_container_item_subheadings_heading}>
-              Python
-            </h6>
-            <h6 className={styles.Sidebar_container_item_subheadings_heading}>
-              Bash
-            </h6>
-            <h6 className={styles.Sidebar_container_item_subheadings_heading}>
-              Linux
-            </h6>
-          </main>
+          <SidebarItem subheadings={utilsHeadings} />
         </div>
 
         {/* DATA VIZ */}
@@ -234,26 +147,7 @@ const Sidebar = () => {
               <use xlinkHref={`${sprite}#icon-chevron-small-right`} />
             </svg>
           </h2>
-          <main
-            className={
-              justClicked
-                ? `${styles.Sidebar_container_item_subheadings} ${styles.open}`
-                : styles.Sidebar_container_item_subheadings
-            }
-          >
-            <h6 className={styles.Sidebar_container_item_subheadings_heading}>
-              Charts
-            </h6>
-            <h6 className={styles.Sidebar_container_item_subheadings_heading}>
-              Tables
-            </h6>
-            <h6 className={styles.Sidebar_container_item_subheadings_heading}>
-              Free-Form
-            </h6>
-            <h6 className={styles.Sidebar_container_item_subheadings_heading}>
-              Vendor
-            </h6>
-          </main>
+          <SidebarItem subheadings={datavizHeadings} />
         </div>
 
         {/* TEMPLATES SECTION */}
@@ -278,29 +172,7 @@ const Sidebar = () => {
               <use xlinkHref={`${sprite}#icon-chevron-small-right`} />
             </svg>
           </h2>
-          <main
-            className={
-              justClicked
-                ? `${styles.Sidebar_container_item_subheadings} ${styles.open}`
-                : styles.Sidebar_container_item_subheadings
-            }
-          >
-            <h6 className={styles.Sidebar_container_item_subheadings_heading}>
-              React
-            </h6>
-            <h6 className={styles.Sidebar_container_item_subheadings_heading}>
-              CSS/Sass
-            </h6>
-            <h6 className={styles.Sidebar_container_item_subheadings_heading}>
-              Webpack
-            </h6>
-            <h6 className={styles.Sidebar_container_item_subheadings_heading}>
-              Express
-            </h6>
-            <h6 className={styles.Sidebar_container_item_subheadings_heading}>
-              Add New
-            </h6>
-          </main>
+          <SidebarItem subheadings={templatesHeadings} />
         </div>
         {/* ASSETS SECTION */}
         <div className={styles.Sidebar_container_item}>
@@ -324,26 +196,7 @@ const Sidebar = () => {
               <use xlinkHref={`${sprite}#icon-chevron-small-right`} />
             </svg>
           </h2>
-          <main
-            className={
-              justClicked
-                ? `${styles.Sidebar_container_item_subheadings} ${styles.open}`
-                : styles.Sidebar_container_item_subheadings
-            }
-          >
-            <h6 className={styles.Sidebar_container_item_subheadings_heading}>
-              Images
-            </h6>
-            <h6 className={styles.Sidebar_container_item_subheadings_heading}>
-              Icons
-            </h6>
-            <h6 className={styles.Sidebar_container_item_subheadings_heading}>
-              Fonts
-            </h6>
-            <h6 className={styles.Sidebar_container_item_subheadings_heading}>
-              Add New
-            </h6>
-          </main>
+          <SidebarItem subheadings={assetsHeadings} />
         </div>
         {/* TAGS SECTION */}
         <div className={styles.Sidebar_container_item}>
@@ -354,15 +207,7 @@ const Sidebar = () => {
             <span className={styles.Sidebar_container_item_heading_title}>
               Tags
             </span>
-            <svg
-              className={
-                justClicked
-                  ? `${styles.Sidebar_container_item_subheadings} ${
-                      styles.open
-                    }`
-                  : styles.Sidebar_container_item_subheadings
-              }
-            >
+            <svg className={styles.Sidebar_container_item_subheadings}>
               <use xlinkHref={`${sprite}#icon-chevron-small-right`} />
             </svg>
           </h2>
