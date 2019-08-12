@@ -90,18 +90,15 @@ const Sidebar = () => {
           />
         </div>
         {/* TAGS SECTION */}
-        <div className={styles.Sidebar_container_item}>
-          <h2 className={styles.Sidebar_container_item_heading}>
-            <svg className={styles.heading_icon}>
-              <use xlinkHref={`${sprite}#icon-tag`} />
-            </svg>
-            <span className={styles.Sidebar_container_item_heading_title}>
-              Tags
-            </span>
-            <svg className={styles.Sidebar_container_item_subheadings}>
-              <use xlinkHref={`${sprite}#icon-chevron-small-right`} />
-            </svg>
-          </h2>
+        <div
+          className={styles.Sidebar_container_item}
+          style={{ marginBottom: "4rem" }}
+        >
+          <SidebarItem
+            heading="Tags"
+            subheadings={tagsHeadings}
+            icon={iconSet.tags}
+          />
         </div>
 
         {/* APPS SECTION */}

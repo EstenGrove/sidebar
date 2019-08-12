@@ -43,7 +43,15 @@ const templatesHeadings = [
 
 const assetsHeadings = ["Images", "Icons", "Fonts", "Add New"];
 
-const tagsHeadings = [];
+const tagsHeadings = [
+  "# dev",
+  "# design",
+  "# utils",
+  "# react",
+  "# html",
+  "# css",
+  "# js"
+];
 const appsHeadings = ["Color Preview", "Markdown Preview"];
 
 const iconSet = {
