@@ -44,16 +44,18 @@ const templatesHeadings = [
 const assetsHeadings = ["Images", "Icons", "Fonts", "Add New"];
 
 const tagsHeadings = [];
+const appsHeadings = ["Color Preview", "Markdown Preview"];
 
 const iconSet = {
   components: "#icon-color-palette",
   styleGuide: "#icon-palette",
-  bugTracker: "icon-bug",
+  bugTracker: "#icon-bug",
   utilities: "#icon-lab-flask",
   dataViz: "#icon-chart-pie",
   templates: "#icon-open-book",
   assets: "#icon-images",
-  tags: "#icon-tag"
+  tags: "#icon-tag",
+  apps: "#icon-grid"
 };
 
 export {
@@ -65,5 +67,6 @@ export {
   bugtrackerHeadings,
   styleguideHeadings,
   componentHeadings,
+  appsHeadings,
   iconSet
 };

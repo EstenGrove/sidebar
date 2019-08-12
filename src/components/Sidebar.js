@@ -11,192 +11,83 @@ import {
   bugtrackerHeadings,
   styleguideHeadings,
   componentHeadings,
+  appsHeadings,
   iconSet
 } from "../utils/headings";
 
 const Sidebar = () => {
-  const [justClicked, setJustClicked] = useState(null);
-
-  function handleToggles(target) {
-    return setJustClicked(target);
-  }
-
   return (
     <aside className={styles.Sidebar}>
-      <h2 className={styles.Sidebar_heading}>Dashboard</h2>
+      <h2
+        className={styles.Sidebar_heading}
+        style={{ color: "#eee", fontWeight: "400" }}
+      >
+        Dashboard
+      </h2>
       <hr className={styles.Sidebar_divider} />
 
       {/* SIDENAV MENU CONTAINER */}
       <div className={styles.Sidebar_container}>
         {/* COMPONENTS SECTION */}
         <div className={styles.Sidebar_container_item}>
-          <h2 className={styles.Sidebar_container_item_heading}>
-            <svg className={styles.heading_icon}>
-              <use xlinkHref={`${sprite}#icon-color-palette`} />
-            </svg>
-            <span className={styles.Sidebar_container_item_heading_title}>
-              Components
-            </span>
-            <svg
-              className={
-                justClicked
-                  ? `${styles.heading_arrow} ${styles.open_close}`
-                  : styles.heading_arrow
-              }
-            >
-              <use xlinkHref={`${sprite}#icon-chevron-small-right`} />
-            </svg>
-          </h2>
           {/* MAIN: SIDEBARITEM COMPONENT GOES HERE... */}
-          <SidebarItem subheadings={componentHeadings} />
+          <SidebarItem
+            heading="Components"
+            subheadings={componentHeadings}
+            icon={iconSet.components}
+          />
         </div>
 
         {/* STYLE GUIDE SECTION */}
         <div className={styles.Sidebar_container_item}>
-          <h2
-            className={styles.Sidebar_container_item_heading}
-            onClick={() => handleToggles("styleGuide")}
-          >
-            <svg className={styles.heading_icon}>
-              <use xlinkHref={`${sprite}#icon-palette`} />
-            </svg>
-            <span className={styles.Sidebar_container_item_heading_title}>
-              Style Guide
-            </span>
-            <svg
-              className={
-                justClicked
-                  ? `${styles.heading_arrow} ${styles.open_close}`
-                  : styles.heading_arrow
-              }
-            >
-              <use xlinkHref={`${sprite}#icon-chevron-small-right`} />
-            </svg>
-          </h2>
-          <SidebarItem subheadings={styleguideHeadings} />
+          <SidebarItem
+            heading="Style Guide"
+            subheadings={styleguideHeadings}
+            icon={iconSet.styleGuide}
+          />
         </div>
         {/* BUG TRACKER SECTION */}
         <div className={styles.Sidebar_container_item}>
-          <h2
-            className={styles.Sidebar_container_item_heading}
-            onClick={() => handleToggles("bugTracker")}
-          >
-            <svg className={styles.heading_icon}>
-              <use xlinkHref={`${sprite}#icon-bug`} />
-            </svg>
-            <span className={styles.Sidebar_container_item_heading_title}>
-              Bug Tracker
-            </span>
-            <svg
-              className={
-                justClicked
-                  ? `${styles.heading_arrow} ${styles.open_close}`
-                  : styles.heading_arrow
-              }
-            >
-              <use xlinkHref={`${sprite}#icon-chevron-small-right`} />
-            </svg>
-          </h2>
-          <SidebarItem subheadings={bugtrackerHeadings} />
+          <SidebarItem
+            heading="Bug Tracker"
+            subheadings={bugtrackerHeadings}
+            icon={iconSet.bugTracker}
+          />
         </div>
 
         {/* UTILS SECTION */}
         <div className={styles.Sidebar_container_item}>
-          <h2
-            className={styles.Sidebar_container_item_heading}
-            onClick={() => handleToggles("utilities")}
-          >
-            <svg className={styles.heading_icon}>
-              <use xlinkHref={`${sprite}#icon-lab-flask`} />
-            </svg>
-            <span className={styles.Sidebar_container_item_heading_title}>
-              Utilities
-            </span>
-            <svg
-              className={
-                justClicked
-                  ? `${styles.heading_arrow} ${styles.open_close}`
-                  : styles.heading_arrow
-              }
-            >
-              <use xlinkHref={`${sprite}#icon-chevron-small-right`} />
-            </svg>
-          </h2>
-          <SidebarItem subheadings={utilsHeadings} />
+          <SidebarItem
+            heading="Utilities"
+            subheadings={utilsHeadings}
+            icon={iconSet.utilities}
+          />
         </div>
 
         {/* DATA VIZ */}
         <div className={styles.Sidebar_container_item}>
-          <h2
-            className={styles.Sidebar_container_item_heading}
-            onClick={() => handleToggles("dataViz")}
-          >
-            <svg className={styles.heading_icon}>
-              <use xlinkHref={`${sprite}#icon-chart-pie`} />
-            </svg>
-            <span className={styles.Sidebar_container_item_heading_title}>
-              Data Viz
-            </span>
-            <svg
-              className={
-                justClicked
-                  ? `${styles.heading_arrow} ${styles.open_close}`
-                  : styles.heading_arrow
-              }
-            >
-              <use xlinkHref={`${sprite}#icon-chevron-small-right`} />
-            </svg>
-          </h2>
-          <SidebarItem subheadings={datavizHeadings} />
+          <SidebarItem
+            heading="Data Viz"
+            subheadings={datavizHeadings}
+            icon={iconSet.dataViz}
+          />
         </div>
 
         {/* TEMPLATES SECTION */}
         <div className={styles.Sidebar_container_item}>
-          <h2
-            className={styles.Sidebar_container_item_heading}
-            onClick={() => handleToggles("templates")}
-          >
-            <svg className={styles.heading_icon}>
-              <use xlinkHref={`${sprite}#icon-open-book`} />
-            </svg>
-            <span className={styles.Sidebar_container_item_heading_title}>
-              Templates
-            </span>
-            <svg
-              className={
-                justClicked
-                  ? `${styles.heading_arrow} ${styles.open_close}`
-                  : styles.heading_arrow
-              }
-            >
-              <use xlinkHref={`${sprite}#icon-chevron-small-right`} />
-            </svg>
-          </h2>
-          <SidebarItem subheadings={templatesHeadings} />
+          <SidebarItem
+            heading="Templates"
+            subheadings={templatesHeadings}
+            icon={iconSet.templates}
+          />
         </div>
         {/* ASSETS SECTION */}
         <div className={styles.Sidebar_container_item}>
-          <h2
-            className={styles.Sidebar_container_item_heading}
-            onClick={() => handleToggles("assets")}
-          >
-            <svg className={styles.heading_icon}>
-              <use xlinkHref={`${sprite}#icon-images`} />
-            </svg>
-            <span className={styles.Sidebar_container_item_heading_title}>
-              Assets
-            </span>
-            <svg
-              className={
-                justClicked
-                  ? `${styles.heading_arrow} ${styles.open_close}`
-                  : styles.heading_arrow
-              }
-            >
-              <use xlinkHref={`${sprite}#icon-chevron-small-right`} />
-            </svg>
-          </h2>
-          <SidebarItem subheadings={assetsHeadings} />
+          <SidebarItem
+            heading="Assets"
+            subheadings={assetsHeadings}
+            icon={iconSet.assets}
+          />
         </div>
         {/* TAGS SECTION */}
         <div className={styles.Sidebar_container_item}>
@@ -211,6 +102,15 @@ const Sidebar = () => {
               <use xlinkHref={`${sprite}#icon-chevron-small-right`} />
             </svg>
           </h2>
+        </div>
+
+        {/* APPS SECTION */}
+        <div className={styles.Sidebar_container_item}>
+          <SidebarItem
+            heading="Apps"
+            subheadings={appsHeadings}
+            icon={iconSet.apps}
+          />
         </div>
       </div>
     </aside>
