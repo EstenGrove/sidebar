@@ -9,11 +9,11 @@ const SidebarItem = ({ heading, subheadings, icon }) => {
       <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0">
         <defs>
           <linearGradient id="g1" y1="100%">
-            <stop stop-color="#5183f5" />
-            <stop offset=".25" stop-color="#5379f7" />
-            <stop offset=".5" stop-color="#5b6df8" />
-            <stop offset=".75" stop-color="#6560f8" />
-            <stop offset="1" stop-color="#7251f5" />
+            <stop stopColor="#5183f5" />
+            <stop offset=".25" stopColor="#5379f7" />
+            <stop offset=".5" stopColor="#5b6df8" />
+            <stop offset=".75" stopColor="#6560f8" />
+            <stop offset="1" stopColor="#7251f5" />
           </linearGradient>
         </defs>
         <rect width="100%" height="100%" fill="url(#g1)" />

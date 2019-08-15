@@ -16,14 +16,45 @@ import {
 } from "../utils/headings";
 
 const Sidebar = () => {
+  const [isMobile, setIsMobile] = useState(false);
+  const [windowSize, setWindowSize] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight
+  });
+
+  useEffect(() => {
+    window.addEventListener("resize", e => {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight
+      });
+    });
+
+    return () =>
+      window.removeEventListener("resize", e => {
+        setWindowSize({
+          width: window.innerWidth,
+          height: window.innerHeight
+        });
+      });
+  }, []);
+
+  console.log(windowSize);
+
   return (
     <aside className={styles.Sidebar}>
-      <h2
-        className={styles.Sidebar_heading}
-        style={{ color: "#eee", fontWeight: "400" }}
-      >
-        Dashboard
-      </h2>
+      {windowSize.width <= 700 ? (
+        <svg className={styles.Sidebar_mobile}>
+          <use xlinkHref={`${sprite}#icon-menu`} />
+        </svg>
+      ) : (
+        <h2
+          className={styles.Sidebar_heading}
+          style={{ color: "#eee", fontWeight: "400" }}
+        >
+          Dashboard
+        </h2>
+      )}
       <hr className={styles.Sidebar_divider} />
 
       {/* SIDENAV MENU CONTAINER */}

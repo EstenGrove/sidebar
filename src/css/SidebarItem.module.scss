@@ -54,13 +54,21 @@
                     height: 1.3rem;
                     margin-right: .5rem;
                     fill: map-get($map: $colors, $key: 'mainBlue');
+
+
                 }
+
+
 
             }
 
             &_subheadings {
+                height: 0;
                 padding: 1rem;
                 display: none;
+                -webkit-transition: all 2s ease;
+                transition: all 2s ease;
+
 
 
                 &_heading {
@@ -159,4 +167,64 @@
 
 .open {
     display: block;
+    height: auto;
+
+}
+
+@media screen and (max-width: 700px) {
+    .Sidebar {
+        max-width: 5rem;
+
+        &_heading {
+            font-size: 1.2rem;
+        }
+
+        &_divider {}
+
+        &_container {
+            width: 100%;
+            height: 100vh;
+            padding: 1rem 1rem;
+            margin-top: 4rem;
+
+            &_item {
+                width: 100%;
+                height: auto;
+                margin-bottom: 4rem;
+
+                &_heading {
+                    @include row_center_all;
+
+                    &_title {
+                        display: none;
+                    }
+
+                    &_icon {
+                        width: 2.5rem;
+                        height: 2.5rem;
+
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+                }
+
+                &_subheadings {
+
+
+
+                    &_heading {
+                        font-size: 1.4rem;
+                        margin-left: .5rem;
+
+                    }
+                }
+            }
+
+        }
+    }
+
+    .heading_arrow {
+        display: none;
+    }
 }
