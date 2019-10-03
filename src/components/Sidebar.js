@@ -16,7 +16,6 @@ import {
 } from "../utils/headings";
 
 const Sidebar = () => {
-  const [isMobile, setIsMobile] = useState(false);
   const [windowSize, setWindowSize] = useState({
     width: window.innerWidth,
     height: window.innerHeight
@@ -31,7 +30,7 @@ const Sidebar = () => {
     });
 
     return () =>
-      window.removeEventListener("resize", e => {
+      window.removeEventListener("resize", () => {
         setWindowSize({
           width: window.innerWidth,
           height: window.innerHeight
@@ -39,14 +38,14 @@ const Sidebar = () => {
       });
   }, []);
 
-  console.log(windowSize);
-
   return (
     <aside className={styles.Sidebar}>
       {windowSize.width <= 700 ? (
-        <svg className={styles.Sidebar_mobile}>
-          <use xlinkHref={`${sprite}#icon-menu`} />
-        </svg>
+        <div className={styles.Sidebar_mobileContainer}>
+          <svg className={styles.Sidebar_mobile}>
+            <use xlinkHref={`${sprite}#icon-menu`} />
+          </svg>
+        </div>
       ) : (
         <h2
           className={styles.Sidebar_heading}

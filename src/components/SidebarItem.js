@@ -32,9 +32,7 @@ const SidebarItem = ({ heading, subheadings, icon }) => {
         <span
           className={
             isOpen
-              ? `${styles.Sidebar_container_item_heading_title} ${
-                  styles.active
-                }`
+              ? `${styles.Sidebar_container_item_heading_title} ${styles.active}`
               : styles.Sidebar_container_item_heading_title
           }
         >

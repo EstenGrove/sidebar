@@ -10,11 +10,15 @@
     font-family: map-get($map: $fonts, $key: 'main');
     background-color: #242f35;
 
+    &_mobileContainer {
+        width: 100%;
+        @include row_center_all;
+    }
+
     &_mobile {
         width: 2rem;
-        height: 2rem;
+        height: 3rem;
         fill: hsla(222, 19%, 64%, 1);
-        margin: 2rem 3.2rem 2rem 3.2rem;
 
         &:hover {
             cursor: pointer;
@@ -171,7 +175,7 @@
 
 @media screen and (max-width: 700px) {
     .Sidebar {
-        width: 10rem;
+        width: 8rem;
 
         &_heading {
             font-size: 1.4rem;
